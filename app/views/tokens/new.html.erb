@@ -1,0 +1,13 @@
+<div>
+  <h1 class="font-bold text-4xl text-blue-500 mb-5">HMAC-SHA256 Encryption</h1>
+
+  <%= form_with url: tokens_path, local: true do |form| %>
+    <%= form.label :key, 'Secret Key:' %>
+    <%= form.text_field :key, class: 'block mb-5 w-144' %>
+    <%= form.label :body, 'Body:' %>
+    <%= form.text_area :body, class: 'w-144 h-48 block' %>
+    <%= form.submit 'Submit', class: 'mt-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded', data: { disable_with: false } %>
+  <% end %>
+
+  <%= render partial: 'tokens/create' %>
+</div>
